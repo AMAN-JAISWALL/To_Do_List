@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" placeholder="ADD Any Task" id="txt1">
+            <br>
+        </form>
+        <button onclick="fun1()" >ADD</button>
+
+        <ol id="olID">
+            <li><span>This is a First Task </span><button onclick="this.parentElement.remove()" >Remove</button></li>
+            <li><span>This is a Second Task </span><button onclick="this.parentElement.remove()" >Remove</button></li>
+            <li><span>This is a Third Task </span><button onclick="this.parentElement.remove()" >Remove</button></li>
+
+        </ol>
+    </div>
+
+
+
+
+    <script>
+        function fun1(e){
+            let txt1 = document.getElementById('txt1').value;
+            let olID = document.getElementById("olID");
+            let li = document.createElement('li');
+
+            li.innerHTML += `<span>${txt1}</span> <button onclick="this.parentElement.remove()" > Remove </button> `
+            olID.appendChild(li);
+            BlankInput()
+            e.preventDefault()
+        }
+        const  BlankInput = () =>{
+            document.getElementById('txt1').value = ''
+        };
+
+    </script>
+
+
+</body>
+
+</html>
